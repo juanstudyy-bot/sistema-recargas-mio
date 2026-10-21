@@ -1,0 +1,54 @@
+# Guía muy sencilla para terminar la actividad de Git
+
+Esta carpeta contiene los archivos de tu proyecto. Git debe ejecutarse en esta carpeta, en tu propio computador.
+
+## 1. Antes de empezar
+1. Descomprime `Proyecto_MIO_Git.zip` en el Escritorio.
+2. Abre la carpeta `Proyecto_MIO`.
+3. Haz clic en la barra de dirección de la carpeta, escribe `powershell` y pulsa Enter.
+
+## 2. Copia y ejecuta cada comando, uno por uno
+Primero crea el repositorio y guarda la versión inicial del documento original:
+
+    git init
+    git branch -M main
+    git status
+    git add "Trabajo_Arquitectura_Basica_MIO.docx"
+    git commit -m "docs: registra linea base del proyecto"
+
+Si Git pide nombre y correo, escribe tus propios datos con estos comandos (cambia los textos de ejemplo):
+
+    git config --global user.name "Tu Nombre"
+    git config --global user.email "tu-correo@example.com"
+
+Después vuelve a ejecutar el comando `git commit`.
+
+## 3. Crear la rama del cambio
+
+    git switch -c cr-01-mejora
+
+## 4. Agregar los artefactos del cambio y guardar el commit
+
+    git add requisitos.md arquitectura.md backlog.md
+    git commit -m "docs: documenta control de pagos pendientes CR-01"
+
+## 5. Integrar el cambio a main
+
+    git switch main
+    git merge cr-01-mejora
+
+## 6. Comprobar el historial
+
+    git log --oneline --graph --decorate --all
+    git status
+
+El historial debe mostrar los commits creados. `git status` debe indicar que el árbol de trabajo está limpio.
+
+## 7. Capturas que debes tomar en tu computador
+- Línea base: después del primer commit, ejecutar `git log --oneline`.
+- Rama: después de `git switch -c cr-01-mejora`, ejecutar `git branch`.
+- Diferencias: antes del segundo commit, ejecutar `git diff --no-index NUL requisitos.md` no es necesario; los archivos nuevos aparecen como no rastreados. Para esta actividad basta con guardar los artefactos y mostrar el historial.
+- Integración: después del merge, capturar `git log --oneline --graph --decorate --all`.
+- Artefactos: abrir `requisitos.md` y `arquitectura.md` y tomar capturas si el docente las solicita.
+
+Importante: no inventes capturas ni hashes. Deben salir de los comandos ejecutados en tu equipo. Si algún comando muestra un error, copia el mensaje o toma una captura y pide ayuda antes de seguir.
