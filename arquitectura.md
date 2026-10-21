@@ -23,3 +23,12 @@ El Servicio de recargas solo marca una operación como **exitosa** después de u
 
 ## Criterio de comprobación
 Revisar los escenarios de pago aprobado, rechazado y sin respuesta. En cada caso, el estado guardado y el mensaje mostrado deben coincidir con el resultado del proveedor.
+Actualización de arquitectura CR-01
+
+El Servicio de recargas recibe el resultado de Gestión de pagos y determina el estado de la operación. Después guarda el estado en Datos y transacciones y solicita a Notificaciones y comprobantes que informe al usuario.
+
+La interfaz no debe mostrar éxito cuando el pago esté rechazado o pendiente.
+
+Flujo: Interfaz → Servicio de recargas → Gestión de pagos → Proveedor externo.
+
+Componentes relacionados: Servicio de recargas, Gestión de pagos, Datos y transacciones, Notificaciones e Interfaz de usuario.

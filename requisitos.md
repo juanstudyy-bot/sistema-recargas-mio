@@ -21,3 +21,4 @@ Sistema de recargas virtuales para la tarjeta MÍO.
 
 ## Caso de uso relacionado
 CU01 — Realizar una recarga virtual de la tarjeta MÍO.
+
