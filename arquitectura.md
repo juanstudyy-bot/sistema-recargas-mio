@@ -32,3 +32,19 @@ La interfaz no debe mostrar éxito cuando el pago esté rechazado o pendiente.
 Flujo: Interfaz → Servicio de recargas → Gestión de pagos → Proveedor externo.
 
 Componentes relacionados: Servicio de recargas, Gestión de pagos, Datos y transacciones, Notificaciones e Interfaz de usuario.
+## CR-02: Consulta del historial de recargas
+
+Se agrega el flujo para consultar las recargas anteriores de un usuario.
+
+1. El usuario inicia sesión y entra a la opción **Historial de recargas**.
+2. La interfaz solicita el historial al Servicio de recargas.
+3. El Servicio de recargas consulta los registros guardados en Datos y transacciones.
+4. El sistema filtra los resultados para mostrar únicamente las recargas del usuario que inició sesión.
+5. La interfaz muestra la fecha, el valor y el estado de cada recarga.
+
+**Componentes involucrados:**
+- **Interfaz de usuario:** permite consultar y visualizar el historial.
+- **Servicio de recargas:** recibe la solicitud y organiza la información.
+- **Datos y transacciones:** almacena los registros de las recargas realizadas.
+
+**Consideración:** la consulta debe validar al usuario autenticado para evitar que se muestren registros de otras personas.

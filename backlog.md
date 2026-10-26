@@ -21,3 +21,15 @@ Componentes afectados: Servicio de recargas, Gestión de pagos, Datos y transacc
 Condición para terminar: comprobar que los pagos aprobados, rechazados y pendientes se registren con el estado correcto y que ninguna operación aparezca como exitosa sin confirmación del proveedor.
 
 Trazabilidad: solicitud CR-01 → requisitos RF05, RF06 y RNF06 → arquitectura del sistema → tarea PB15.
+## CR-02: Consulta del historial de recargas
+
+- **Historia de usuario:** Como usuario de la tarjeta MÍO, quiero consultar mis recargas anteriores para revisar sus fechas, valores y estados.
+- **Requisito relacionado:** RF06.
+- **Tareas:**
+  1. Documentar la consulta del historial.
+  2. Definir la información que se mostrará en cada registro.
+  3. Verificar que solo se consulten recargas del usuario autenticado.
+  4. Revisar la coherencia entre requisitos, arquitectura y backlog.
+- **Criterios de aceptación:** se muestran fecha, valor y estado de cada recarga, y los datos corresponden únicamente al usuario que inició sesión.
+- **Prioridad:** Media.
+- **Estado:** En revisión.
